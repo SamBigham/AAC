@@ -1,25 +1,28 @@
 import structures.AssociativeArray;
 import structures.KeyNotFoundException;
 
-
-public class AACCategory{
+/**
+ * AACategory
+ *
+ * @author Sam Bigham
+ * 
+ *         This class contains an associative holding two strings.
+ *         This can be used to hold an imageLoc and the text of the image
+ *         this will then be read
+ */
+public class AACCategory {
 
     public AssociativeArray<String, String> aacat;
-
-
-   // AACMappings<String, AACCategory> mapref;
-
-    //AACCategory homcat = AACMappings.homCategory;
-
     String CatName;
+
+    /*
+     * Constructer
+     */
     public AACCategory(String name) {
 
-        aacat = new AssociativeArray<String, String>();
+        aacat = new AssociativeArray<String, String>(); //sets of AA to hold strings
 
-    //   aacat.set("img/food/icons8-french-fries-96.png", "french fries");
-    //   aacat.set("img/food/icons8-watermelon-96.png", "watermelon");
-      this.CatName = name;
-       // aacat.set("img/clothing/cap.png", "ballcap");
+        this.CatName = name; //name of category
     }
 
     /*
@@ -33,34 +36,29 @@ public class AACCategory{
      * returns an array of all images in the category
      */
     public String[] getImages() {
-        System.out.println("GETTING IMAGES>>>>");
-         String[] strarr = new String[20];
-         strarr = aacat.getKeys();
-
-        // System.out.println(homcat.aacat);
-           // System.out.println(aacat.get("img/food/plate.png"));
-        //  System.out.println(aacat.size);
-
-        return strarr;
+        return aacat.getKeys();
     }
 
+    /*
+     *  gets the text associated with an image location
+     */
     public String getText​(java.lang.String imageLoc) {
-       
+
         try {
-             String str;
+            String str;
             str = aacat.get(imageLoc);
             return str;
         } catch (KeyNotFoundException e) {
             e.printStackTrace();
             return "error";
         }
-        
+
     }
 
     /*
-     *  checks wether the array has an image
+     * checks wether the array has an image
      */
-    public boolean hasImage​(String imageLoc){
+    public boolean hasImage​(String imageLoc) {
         return this.aacat.hasKey(imageLoc);
     }
 
@@ -71,5 +69,4 @@ public class AACCategory{
         this.aacat.set(imageLoc, text);
     }
 
-    
 }
