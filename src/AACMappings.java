@@ -147,8 +147,6 @@ public class AACMappings<K, V> extends AssociativeArray<K, V> {
                         String[] innerWords = currentCategory.aacat.getCategories(); //becomes all inner text
 
                         for (int j = 0; j < currentCategory.aacat.size; j++) {
-                            System.out.println("innerImages:" +innerImages[j]);
-                            System.out.println("innerWords:" + innerWords[j]);
                             pen.println(">" + innerImages[j] + " " + innerWords[j]);// prints everything out onto file
                         }
                     } catch (KeyNotFoundException e) {
