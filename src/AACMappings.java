@@ -138,7 +138,7 @@ public class AACMappings<K, V> extends AssociativeArray<K, V> {
             catarr = homCategory.aacat.getCategories(); //will become all categories
 
             for (int i = 0; i < aamap.size; i++) { //for how many categories are in aamap
-                pen.println(imagearr[i] + catarr[i]);//prints all image categories pairs
+                pen.println(imagearr[i] + " " + catarr[i]);//prints all image categories pairs
 
                 if (homCategory.aacat.size != 0) { //if categories have other images
                     try {
@@ -147,7 +147,9 @@ public class AACMappings<K, V> extends AssociativeArray<K, V> {
                         String[] innerWords = currentCategory.aacat.getCategories(); //becomes all inner text
 
                         for (int j = 0; j < currentCategory.aacat.size; j++) {
-                            pen.println(">" + innerImages[j] + innerWords[j]);// prints everything out onto file
+                            System.out.println("innerImages:" +innerImages[j]);
+                            System.out.println("innerWords:" + innerWords[j]);
+                            pen.println(">" + innerImages[j] + " " + innerWords[j]);// prints everything out onto file
                         }
                     } catch (KeyNotFoundException e) {
                         // TODO Auto-generated catch block
