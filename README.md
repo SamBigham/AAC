@@ -2,7 +2,7 @@
 
 #Author Sam Bigham
 
-This is the ReadMe of the AAC. the template for this project was taken from https://github.com/catiembaker/AACNestedHW
+This is the ReadMe of the AAC. the template for this project was taken from https://accessibilityeducation.github.io/assignments/AAC/AAC.html
 
 After downloading, click run on AAC.java in order to run program.
 
